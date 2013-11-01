@@ -1,0 +1,34 @@
+body{
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+#wrapper{
+    background: #dfdfdf;
+    width: 960px;
+    margin: 0 auto;
+}
+
+header{
+    background: skyblue;
+    overflow: auto;
+    padding: 20px;
+}
+
+header h1{
+    float: left;
+    font-size: 3em;
+}
+
+header form{
+    float:right;
+}
+
+section{
+    padding: 20px;
+}
+
+footer{
+    height:20px;
+    background: black;
+}

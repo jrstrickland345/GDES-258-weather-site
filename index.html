@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weather App</title>
+        <link rel="stylesheet" href="css/reset.css"/>
+        <link rel="stylesheet" href="css/styles.css"/>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <h1>Weather Today</h1>
+                <form>
+                    <label for="zip">Find Local Weather</label>
+                    <input id="zip" type="text" placeholder="Zip or City, St"/>
+                    <input type="submit" value="Go" id="go"/>
+                </form>
+            </header>
+            <section id="weather">
+                <h2>Current weather for <span>City, St</span></h2>
+                
+            </section>
+            <footer>
+            </footer>
+        </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/jquery.simpleWeather-2.3.min.js"></script>
+    <script src="js/scripts.js"></script>
+    </body>
+</html>
