@@ -1,31 +1,59 @@
 $(document).ready(function() {
     
-    $('#go').click(function(){
+    $('#go').on('click', function(e){
        
-        console.log('clicked');
+       console.log(e.type);
+       
+        
+        getWeather();
+        
+	
+	});
+	
+	$('#zip').on('keypress', function(e){
+       
+       
+        if(e.which == 13) {
+           
+           e.preventDefault();
+           
+           getWeather();
+           
+        }
+       
+        
+	
+	
+	});
+	
+	function getWeather(){
+		
         var zip = $('#zip').val();
-        console.log(zip);
        
-    $.simpleWeather({
-            zipcode: zip,
-            success: function(weather){
-                html = '<h1>' + weather.city + '</h1>';
-                html += '<h3>' + weather.temp + '</h3>';
-                html += '<p>Tomorrow\'s Forecast High: ' + weather.tomorrow.high + '</p>';
-                html += ' <img src="img/' + weather.code + '.svg" />';
-                html += $('body').addClass('bg' + weather.code);
-                
-                console.log(weather.city);
-                
-                // Output on Page
-                $('#weather').html(html);
-            },
-            error: function(error) {
-                $("#weather").html('<p>'+error+'</p>');
-                console.log('error');
-            }
-        });// end weather
-  });
+	    $.simpleWeather({
+	            zipcode: zip,
+	            success: function(weather){
+	                html = '<h1>Forecast for: ' + weather.city + ', ' + weather.region +'</h1>';
+	                html += '<h3>Currently: <span class="high">' + weather.temp + '<span></h3>';
+	                html += '<img src="' + weather.image + '"/>';
+	                html += '<h3>' + weather.currently + '</h3>';
+	                html += '<h3><span class="high">' + weather.high + '</span>/<span class="low">' + weather.low + '<span></h3>';
+	                
+	               
+	                
+	                console.log(weather.city);
+	                
+	                // Output on Page
+	                $('#weather').html(html);
+	            },
+	            error: function(error) {
+	                $("#weather").html('<p>'+error+'</p>');
+	                console.log('error');
+	            }
+	     });// end weather
+	
+	}
+	
     
    
 });
